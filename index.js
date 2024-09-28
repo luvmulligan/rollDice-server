@@ -59,21 +59,25 @@ io.on('connection', (socket) => {
       const user = session.users.find((u) => u.id === socket.id);
       if (user) {
         user.name = newName;
-        // users.push({ name: user.name, score: 0 });
+        users.push({ name: user.name, score: 0 });
         io.to(sessionId).emit('sessionUpdate', session.users);
       }
     }
   });
 
   // Marcar que el usuario está listo
-  socket.on('ready', ({ sessionId }) => {
+  socket.on('ready', ({ sessionId, isReady }) => {
     const session = sessions[sessionId];
     if (session) {
       const user = session.users.find((u) => u.id === socket.id);
       if (user) {
-        user.ready = true;
+        user.ready = isReady;
         io.to(sessionId).emit('sessionUpdate', session.users);
       }
+      // if (user && !user.ready) {
+      //   user.ready = false;
+      //   io.to(sessionId).emit('sessionUpdate', session.users);
+      // }
     }
   });
   socket.on('disconnect', () => {
