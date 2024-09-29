@@ -17,5 +17,7 @@
   "publishConfig": {
     "registry": "http://npm.pkg.github.com"
   },
-  "repository": "https://github.com/luvmulligan/rollDice-server"
+  "repository": {
+    "url": "git+https://github.com/luvmulligan/rollDice-server.git"
+  }
 }
