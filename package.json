@@ -15,7 +15,7 @@
     "uuid": "^10.0.0"
   },
   "publishConfig": {
-    "registry": "http://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "url": "git+https://github.com/luvmulligan/rollDice-server.git"
