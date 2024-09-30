@@ -1,5 +1,5 @@
 {
-  "name": "@rolldice/rolldice-server",
+  "name": "rolldice-server",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
